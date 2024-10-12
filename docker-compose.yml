@@ -1,0 +1,16 @@
+services:
+  app:
+    image: middleware-test
+    ports:
+      - "3000:3000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AUTH_SECRET=na4MijW6SbBpNwpE63lAp48we5U0lMxdUsewuEzdEoI=
+      - AUTH_CALLBACK_URL=http://localhost:3000/
+      - AUTH_KEYCLOAK_ID=keycloak-client
+      - AUTH_KEYCLOAK_SECRET=keycloak-secret
+      - AUTH_KEYCLOAK_ISSUER=https://keycloak.org/realms/test
+      - AUTH_TRUST_HOST=localhost:3000
+      - AUTH_URL=http://localhost:3000
